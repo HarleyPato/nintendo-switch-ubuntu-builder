@@ -616,7 +616,7 @@ EOF
 
 # Configuration: Configure GPU clock automatically based on power source state
 cat <<'EOF' > "$chroot_dir/etc/udev/rules.d/02-nintendo-switch-gpu-power.rules"
-SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="bq24190-charger", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/usr/local/bin/gpu_power.sh high"
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="bq24190-charger", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/usr/local/bin/gpu_power.sh medium"
 SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="bq24190-charger", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/usr/local/bin/gpu_power.sh medium"
 EOF
 
